@@ -5,7 +5,10 @@ BR2_cortex_a55=y
 BR2_TARGET_GENERIC_HOSTNAME="Knulli-RG405M"
 BR2_TARGET_GENERIC_ISSUE="Welcome to Knulli (RG405M)"
 
-# Kernel Configuration
+# Fixed Kernel Headers (Use standard 4.14 headers for UMS512)
+BR2_PACKAGE_HOST_LINUX_HEADERS_CUSTOM_4_14=y
+
+# Kernel Source Configuration
 BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_CUSTOM_GIT=y
 BR2_LINUX_KERNEL_CUSTOM_REPO_URL="https://gitlab.com/ubports/porting/community-ports/android10/ubports-kernel-ums512.git"
