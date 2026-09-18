@@ -13,6 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          ref: knulli-main
           submodules: recursive
           fetch-depth: 0
 
@@ -35,14 +36,14 @@ jobs:
 
       - name: Configure Target
         run: |
-          make batocera-rg405m_defconfig
+          make -C buildroot BR2_EXTERNAL=.. batocera-rg405m_defconfig
 
       - name: Compile Knulli Image
         run: |
-          make -j$(nproc)
+          make -C buildroot BR2_EXTERNAL=.. -j$(nproc)
 
       - name: Upload Flashable Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: knulli-rg405m-image
-          path: output/images/*
+          path: buildroot/output/images/*
