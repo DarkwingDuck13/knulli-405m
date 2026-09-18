@@ -3,7 +3,7 @@ name: Build Knulli RG405M
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ main, knulli-main ]
 
 jobs:
   build:
