@@ -41,7 +41,10 @@ jobs:
 
       - name: Compile Knulli Image
         run: |
-          make -C buildroot BR2_EXTERNAL=.. -j$(nproc)
+              make -C buildroot BR2_EXTERNAL=.. \
+                BR2_PRIMARY_SITE="https://sources.buildroot.net" \
+                BR2_BACKUP_SITE="https://ftpmirror.gnu.org" \
+                -j$(nproc)
 
       - name: Upload Flashable Artifacts
         uses: actions/upload-artifact@v4
