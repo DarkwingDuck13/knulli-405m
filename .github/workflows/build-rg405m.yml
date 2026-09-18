@@ -36,6 +36,7 @@ jobs:
 
       - name: Configure Target
         run: |
+          rm -f buildroot/.config
           make -C buildroot BR2_EXTERNAL=.. batocera-rg405m_defconfig
           make -C buildroot BR2_EXTERNAL=.. olddefconfig
 
