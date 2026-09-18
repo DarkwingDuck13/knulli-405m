@@ -1,28 +1,13 @@
-# Target Architecture Settings
 BR2_aarch64=y
-BR2_cortex_a75_a55=y
+BR2_cortex_a55=y
 
 # System Identity
 BR2_TARGET_GENERIC_HOSTNAME="Knulli-RG405M"
 BR2_TARGET_GENERIC_ISSUE="Welcome to Knulli (RG405M)"
 
-# Kernel Source & DTS Configuration
+# Kernel Configuration
 BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_CUSTOM_GIT=y
 BR2_LINUX_KERNEL_CUSTOM_REPO_URL="https://gitlab.com/ubports/porting/community-ports/android10/ubports-kernel-ums512.git"
 BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION="main"
 BR2_LINUX_KERNEL_DEFCONFIG="ums512_defconfig"
-BR2_LINUX_KERNEL_DTS_SUPPORT=y
-BR2_LINUX_KERNEL_CUSTOM_DTS_PATH="board/batocera/anbernic/rg405m/dts/ums512-anbernic-rg405m.dts"
-BR2_LINUX_KERNEL_INTREE_DTS_NAME="ums512-anbernic-rg405m"
-
-# Graphics Architecture
-BR2_PACKAGE_MESA3D=y
-BR2_PACKAGE_MESA3D_GALLIUM_PANFROST=y
-BR2_PACKAGE_MESA3D_OPENGL_EGL=y
-BR2_PACKAGE_MESA3D_OPENGL_ES=y
-
-# Boot Script Generation
-BR2_TARGET_UBOOT=y
-BR2_TARGET_UBOOT_BOOT_SCRIPT=y
-BR2_TARGET_UBOOT_BOOT_SCRIPT_SOURCE="board/batocera/anbernic/rg405m/boot.cmd"
