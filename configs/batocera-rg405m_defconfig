@@ -1,0 +1,20 @@
+# Target Architecture Settings
+BR2_aarch64=y
+BR2_cortex_a75_a55=y
+
+# System Identity
+BR2_TARGET_GENERIC_HOSTNAME="Knulli-RG405M"
+BR2_TARGET_GENERIC_ISSUE="Welcome to Knulli (RG405M)"
+
+# Kernel Source (UBPorts Unisoc T618 / UMS512 Mainline Fork)
+BR2_LINUX_KERNEL=y
+BR2_LINUX_KERNEL_CUSTOM_GIT=y
+BR2_LINUX_KERNEL_CUSTOM_REPO_URL="https://gitlab.com/ubports/porting/community-ports/android10/ubports-kernel-ums512.git"
+BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION="main"
+BR2_LINUX_KERNEL_DEFCONFIG="ums512_defconfig"
+
+# Graphics Architecture
+BR2_PACKAGE_MESA3D=y
+BR2_PACKAGE_MESA3D_GALLIUM_PANFROST=y
+BR2_PACKAGE_MESA3D_OPENGL_EGL=y
+BR2_PACKAGE_MESA3D_OPENGL_ES=y
